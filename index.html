@@ -11,12 +11,40 @@ HTML Code, der den Inhalt der Webseite zeigen soll, unterschieden werden die Ber
 	<body>
 		<header>
 			Hier entseht der Header bereich
+			<div>
+				<h1>Tap to Adventure</h1>
+				<span id="level">Level: 1</span>
+				<span id="timer"></span>
+				<span id="little_boss"></span>
+				<span id ="big_boss"></span>
+			</div>
 		</header>
 		<content>
 			Content Bereich
+			<form method="post" name="click">
+				<div>
+					<img src="enemy_graphics/mouse.png" onclick="clicking()" type="button" id="enemy_button" alt="mouse_picture"/>
+				</div>
+			</form>
 		</content>
 		<footer>
 			Hier entsteht der Footer Bereich
+			<span id="health_point">Health: 4</span>
+				<div id="skills">
+					<form method="post" name="skills">
+						<fieldset>
+							<legend>Skills</legend>
+							<div>	
+								EXP: <span id="experience">0</span>
+							</div>
+							<div>
+								<button type="button" onclick="increase_strength()">Increase click Strength; Cost: 5EXP</button>
+								Click strength: <span id="click_strength">1</span>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			<div>
 		</footer>
   </body>
 </html>
