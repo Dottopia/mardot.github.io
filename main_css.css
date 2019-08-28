@@ -28,7 +28,7 @@ h1{
 	position:absolute;
 	width:100%;
 	margin-top:10%;
-	background-image:url(background_room.png);
+	background-image:url(background_graphics/room_background.jpg);
 	background-size:cover;
 	height:60%;
 }
