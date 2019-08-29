@@ -19,8 +19,8 @@ header{
 }
 #timer{
 	position:absolute;
-	margin-left:55%;
-	margin-top:4.8%;
+	margin-left:68%;
+	margin-top:2.8%;
 	font-weight:bold;
 	font-size:140%;
 }
@@ -66,8 +66,8 @@ footer{
 }
 #enemy_button{
 	position:absolute;
-	width:5%;
-	height:20%;
+	width:10%%;
+	height:25%;
 	margin-top:0%;
 	margin-left:40%;
 	color:white;
@@ -83,8 +83,8 @@ footer{
 	position: absolute;
 	text-align:center;
 	display:block;
-	margin-left:47.5%;
-	margin-top:5%;
+	margin-left:60%;
+	margin-top:3%;
 	font-weight:bold;
 }
 #big_boss{
