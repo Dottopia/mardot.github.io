@@ -35,7 +35,7 @@ content{
 #health_point{
 	color:white;
 	position:absolute;
-	margin-top:2%;
+	margin-top:4%;
 	margin-left:48%;
 	background-color:red;
 }
@@ -66,8 +66,8 @@ footer{
 }
 #enemy_button{
 	position:absolute;
-	width:20%;
-	height:80%;
+	width:5%;
+	height:20%;
 	margin-top:0%;
 	margin-left:40%;
 	color:white;
@@ -94,6 +94,69 @@ footer{
 	margin-left:48.5%;
 	margin-top:5%;
 	font-weight:bold;
+}
+#click_info_button{
+	position:absolute;
+	width: 12%;
+	height: 15%;
+	background-color:#8CE176;
+	border: none;
+}
+#click_info_window{
+	position:absolute;
+	margin-left:12%;
+	background-color:#8CE176;
+	width:85%;
+	height:60%;
+	display:none;
+}
+#worker_info_button{
+	position:absolute;
+	margin-top:2.5%;
+	width: 12%;
+	height: 15%;
+	background-color:#65A0BE;
+	border: none;
+}
+#worker_info_window{
+	position:absolute;
+	margin-left:12%;
+	background-color:#65A0BE;
+	width:85%;
+	height:60%;
+	display:none;
+}
+#shop_info_button{
+	position:absolute;
+	margin-top:4.95%;
+	width: 12%;
+	height: 15%;
+	background-color:#CD9363;
+	border: none;
+}
+#shop_info_window{
+	position:absolute;
+	margin-left:12%;
+	background-color:#CD9363;
+	width:85%;
+	height:60%;
+	display:none;
+}
+#setting_info_button{
+	position:absolute;
+	margin-top:7.45%;
+	width: 12%;
+	height: 15%;
+	background-color:#C9605B;
+	border: none;
+}
+#setting_info_window{
+	position:absolute;
+	margin-left:12%;
+	background-color:#C9605B;
+	width:85%;
+	height:60%;
+	display:none;
 }
 #bug_exception{
 	border-color:white;

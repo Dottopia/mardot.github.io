@@ -10,17 +10,16 @@ HTML Code, der den Inhalt der Webseite zeigen soll, unterschieden werden die Ber
 	</head>
 	<body>
 		<header>
-			Hier entseht der Header bereich
 			<div>
 				<h1>Tap to Adventure</h1>
-				<span id="level">Level: 1</span>
-				<span id="timer"></span>
-				<span id="little_boss"></span>
+				<span id ="level">Level: 1</span>
+				<span id ="timer"></span>
+				<span id ="little_boss"></span>
 				<span id ="big_boss"></span>
+				<span id ="health_point">Health: 4</span>
 			</div>
 		</header>
 		<content>
-			Content Bereich
 			<form method="post" name="click">
 				<div>
 					<img src="enemy_graphics/mouse.png" onclick="clicking()" type="button" id="enemy_button" alt="mouse_picture"/>
@@ -28,9 +27,9 @@ HTML Code, der den Inhalt der Webseite zeigen soll, unterschieden werden die Ber
 			</form>
 		</content>
 		<footer>
-			Hier entsteht der Footer Bereich
-			<span id="health_point">Health: 4</span>
-				<div id="skills">
+			<div>
+				<button onclick="view_click_info_window()" type="button" id="click_info_button">Click Info</button>
+				<div id="click_info_window">
 					<form method="post" name="skills">
 						<fieldset>
 							<legend>Skills</legend>
@@ -44,7 +43,25 @@ HTML Code, der den Inhalt der Webseite zeigen soll, unterschieden werden die Ber
 						</fieldset>
 					</form>
 				</div>
+			</div>
 			<div>
+				<button onclick="view_worker_info_window()" type="button" id="worker_info_button">Worker Info</button>
+				<div id="worker_info_window">
+					
+				</div>
+			</div>
+			<div>
+				<button onclick="view_shop_info_window()" type="button" id="shop_info_button">Shop Info</button>
+				<div id="shop_info_window">
+					
+				</div>
+			</div>
+			<div>
+				<button onclick="view_setting_info_window()" type="button" id="setting_info_button">Setting Info</button>
+				<div id="setting_info_window">
+					
+				</div>
+			</div>
 		</footer>
   </body>
 </html>
