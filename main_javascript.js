@@ -13,8 +13,7 @@
 	var enemy_left_or_right;
 	var enemy_down_or_up;
 	var timer = 30;
-	//var next_level_is_little_boss_level = (lvl === (little_boss_lvl - 1));
-	//var next_level_is_big_boss_level = (lvl === (big_boss_lvl - 1));
+
 	var visibility_of_click_window;
 	var visibility_of_worker_window;
 	var visibility_of_shop_window;
@@ -30,45 +29,16 @@
 	//setInterval(health_point_less_zero_and_next_level_is_boss_level,1000);
 
 	function clicking(){
-
-
 		click = click + 1;
 		current_health_point = current_health_point - click_attack;
-		timer = 30;
 
-
-		//document.getElementById("little_boss").innerHTML = " ";
-		//document.getElementById("big_boss").innerHTML = " ";
-		//document.getElementById("timer").innerHTML = " ";
-
-		if (current_health_point < 1)
-		{
-
+		if (current_health_point < 1){
 			health_point_less_zero();
-
 		}
-
 		else{
-
 			health_point_greater_zero();
 		}
-
-
-		//health_point_greater_zero();
-
-		//health_point_less_zero();
-		//health_point_less_zero_and_no_big_boss_level();
-
-
-
-		//big_boss_level();
-		//little_boss_level();
-
-		//if_little_boss_dead();
-		//if_big_boss_dead();
-
 	}
-
 
 	function health_point_less_zero(){
 		next_lvl = lvl + 1;
@@ -79,27 +49,18 @@
 		this_level_is_no_boss_level=((lvl!==little_boss_lvl) && (lvl!==big_boss_lvl));
 		this_level_is_boss_level= ((lvl===little_boss_lvl) || (lvl===big_boss_lvl));
 
-
-
 		if (this_level_is_boss_level){
 			if ((lvl/little_boss_lvl)===1){
-				//little_boss_dead=true;
-				experience = experience + 2;
-
+				experience = experience + 3;
 				little_boss_lvl = little_boss_lvl + 10;
 				timer = 30;
-				//little_boss_dead = false;
 				document.getElementById("timer").innerHTML = " ";
 				document.getElementById("little_boss").innerHTML = " ";
 			}
-
 			if ((lvl/big_boss_lvl)===1){
-				//big_boss_dead=true;
-				experience = experience + 4;
-
+				experience = experience + 5;
 				big_boss_lvl = big_boss_lvl + 10;
 				timer = 30;
-				//big_boss_dead = false;
 				document.getElementById("timer").innerHTML = " ";
 				document.getElementById("big_boss").innerHTML = " ";
 			}
@@ -115,17 +76,15 @@
 		if (this_level_is_no_boss_level){
 			experience = experience + 1;
 
-
 			if (next_level_is_little_boss_level){
 
 					max_health_point = 10 * next_lvl;
 					current_health_point = max_health_point;
 					document.getElementById("little_boss").innerHTML = "Little Boss";
 					document.getElementById("big_boss").innerHTML = " ";
-					//document.getElementById("timer").innerHTML = " ";
+
 					setInterval(all_boss_timer,1000);
 				}
-
 
 			if (next_level_is_big_boss_level){
 
@@ -133,10 +92,8 @@
 					current_health_point = max_health_point;
 					document.getElementById("little_boss").innerHTML = " ";
 					document.getElementById("big_boss").innerHTML = "Big Boss";
-					//document.getElementById("timer").innerHTML = " ";
+
 					setInterval(all_boss_timer,1000);
-
-
 				}
 
 				if(next_level_is_no_boss_level){
@@ -147,20 +104,10 @@
 					document.getElementById("big_boss").innerHTML = " ";
 					document.getElementById("timer").innerHTML = " ";
 
-
 				}
-
 		}
-
-
-
-		//document.getElementById("little_boss").innerHTML = "Small Boss";
-			//current_health_point = current_health_point - click_attack;
-			//
 			lvl = next_lvl;
-
 	}
-
 
 	function health_point_greater_zero(){
 
@@ -174,48 +121,29 @@
 				document.getElementById("little_boss").innerHTML = " ";
 				document.getElementById("big_boss").innerHTML = " ";
 				document.getElementById("timer").innerHTML = " ";
-
 			}
-
 			if ((lvl/little_boss_lvl)===1){
-
 				if (timer <= 0){
-				timer = 0;
-				lvl = 1;
-				current_health_point = 4;
-				max_health_point = 4;
-				//little_boss_dead = false;
-				document.getElementById("timer").innerHTML = " ";
-				document.getElementById("little_boss").innerHTML = " ";
+					timer = 0;
+					lvl = 1;
+					current_health_point = 4;
+					max_health_point = 4;
+					document.getElementById("timer").innerHTML = " ";
+					document.getElementById("little_boss").innerHTML = " ";
 				}
-
-
 			}
-
-
 			if ((lvl/big_boss_lvl)===1){
 
-
-			if (timer <= 0){
-				timer = 0;
-				lvl = 1;
-				current_health_point = 4;
-				max_health_point = 4;
-				//big_boss_dead = false;
-				document.getElementById("timer").innerHTML = " ";
-				document.getElementById("big_boss").innerHTML = " ";
+				if (timer <= 0){
+					timer = 0;
+					lvl = 1;
+					current_health_point = 4;
+					max_health_point = 4;
+					document.getElementById("timer").innerHTML = " ";
+					document.getElementById("big_boss").innerHTML = " ";
 				}
-
 			}
-
-
 	}
-
-
-
-
-
-
 
 	function message_output(){
 		document.getElementById("level").innerHTML = "Level: "+lvl;
