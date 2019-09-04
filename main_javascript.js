@@ -13,6 +13,7 @@
 	var enemy_left_or_right;
 	var enemy_down_or_up;
 	var timer = 30;
+
 	var visibility_of_click_window;
 	var visibility_of_worker_window;
 	var visibility_of_shop_window;
@@ -28,7 +29,6 @@
 	//setInterval(health_point_less_zero_and_next_level_is_boss_level,1000);
 
 	function clicking(){
-
 		click = click + 1;
 		current_health_point = current_health_point - click_attack;
 
@@ -64,11 +64,13 @@
 				document.getElementById("timer").innerHTML = " ";
 				document.getElementById("big_boss").innerHTML = " ";
 			}
+
 			max_health_point = 4 * next_lvl;
 			current_health_point = max_health_point;
 			document.getElementById("little_boss").innerHTML = " ";
 			document.getElementById("big_boss").innerHTML = " ";
 			document.getElementById("timer").innerHTML = " ";
+
 		}
 
 		if (this_level_is_no_boss_level){
@@ -80,35 +82,42 @@
 					current_health_point = max_health_point;
 					document.getElementById("little_boss").innerHTML = "Little Boss";
 					document.getElementById("big_boss").innerHTML = " ";
+
 					setInterval(all_boss_timer,1000);
 				}
 
 			if (next_level_is_big_boss_level){
+
 					max_health_point = 10 * next_lvl;
 					current_health_point = max_health_point;
 					document.getElementById("little_boss").innerHTML = " ";
 					document.getElementById("big_boss").innerHTML = "Big Boss";
+
 					setInterval(all_boss_timer,1000);
 				}
 
 				if(next_level_is_no_boss_level){
+
 					max_health_point = 4 * next_lvl;
 					current_health_point = max_health_point;
 					document.getElementById("little_boss").innerHTML = " ";
 					document.getElementById("big_boss").innerHTML = " ";
 					document.getElementById("timer").innerHTML = " ";
+
 				}
 		}
 			lvl = next_lvl;
 	}
 
 	function health_point_greater_zero(){
+
 			enemy_down_or_up = ((Math.random()*16)+(-0));
 			enemy_left_or_right = ((Math.random()*70)+5);
 			document.getElementById("enemy_button").style.marginLeft = enemy_left_or_right+"%";
 			document.getElementById("enemy_button").style.marginTop = enemy_down_or_up+"%";
 
 			if (((lvl/little_boss_lvl)!==1) && ((lvl/big_boss_lvl)!==1)){
+
 				document.getElementById("little_boss").innerHTML = " ";
 				document.getElementById("big_boss").innerHTML = " ";
 				document.getElementById("timer").innerHTML = " ";
