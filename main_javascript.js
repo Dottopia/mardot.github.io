@@ -13,7 +13,6 @@
 	var enemy_left_or_right;
 	var enemy_down_or_up;
 	var timer = 30;
-
 	var visibility_of_click_window;
 	var visibility_of_worker_window;
 	var visibility_of_shop_window;
@@ -24,11 +23,12 @@
 	var this_level_is_no_boss_level;
 
 	setInterval(message_output,100);
-	//setInterval(if_little_boss_dead,1000);
-	//setInterval(if_big_boss_dead,1000);
-	//setInterval(health_point_less_zero_and_next_level_is_boss_level,1000);
+	if(timer <= 0){
+		reset_to_lvl_1();
+	}
 
 	function clicking(){
+
 		click = click + 1;
 		current_health_point = current_health_point - click_attack;
 
@@ -44,7 +44,6 @@
 		next_lvl = lvl + 1;
 		next_level_is_little_boss_level= (next_lvl===little_boss_lvl);
 		next_level_is_big_boss_level = (next_lvl===big_boss_lvl);
-		//next_level_is_no_boss_level=((next_level_is_little_boss_level && next_level_is_big_boss_level)===false);
 		next_level_is_no_boss_level=((next_lvl!==little_boss_lvl) && (next_lvl!==big_boss_lvl));
 		this_level_is_no_boss_level=((lvl!==little_boss_lvl) && (lvl!==big_boss_lvl));
 		this_level_is_boss_level= ((lvl===little_boss_lvl) || (lvl===big_boss_lvl));
@@ -64,13 +63,11 @@
 				document.getElementById("timer").innerHTML = " ";
 				document.getElementById("big_boss").innerHTML = " ";
 			}
-
 			max_health_point = 4 * next_lvl;
 			current_health_point = max_health_point;
 			document.getElementById("little_boss").innerHTML = " ";
 			document.getElementById("big_boss").innerHTML = " ";
 			document.getElementById("timer").innerHTML = " ";
-
 		}
 
 		if (this_level_is_no_boss_level){
@@ -82,63 +79,57 @@
 					current_health_point = max_health_point;
 					document.getElementById("little_boss").innerHTML = "Little Boss";
 					document.getElementById("big_boss").innerHTML = " ";
-
 					setInterval(all_boss_timer,1000);
 				}
 
 			if (next_level_is_big_boss_level){
-
 					max_health_point = 10 * next_lvl;
 					current_health_point = max_health_point;
 					document.getElementById("little_boss").innerHTML = " ";
 					document.getElementById("big_boss").innerHTML = "Big Boss";
-
-					setInterval(all_boss_timer,1000);
+					//setInterval(all_boss_timer,1000);
 				}
 
 				if(next_level_is_no_boss_level){
-
 					max_health_point = 4 * next_lvl;
 					current_health_point = max_health_point;
 					document.getElementById("little_boss").innerHTML = " ";
 					document.getElementById("big_boss").innerHTML = " ";
 					document.getElementById("timer").innerHTML = " ";
-
 				}
 		}
 			lvl = next_lvl;
 	}
 
 	function health_point_greater_zero(){
-
 			enemy_down_or_up = ((Math.random()*16)+(-0));
 			enemy_left_or_right = ((Math.random()*70)+5);
 			document.getElementById("enemy_button").style.marginLeft = enemy_left_or_right+"%";
 			document.getElementById("enemy_button").style.marginTop = enemy_down_or_up+"%";
 
 			if (((lvl/little_boss_lvl)!==1) && ((lvl/big_boss_lvl)!==1)){
-
 				document.getElementById("little_boss").innerHTML = " ";
 				document.getElementById("big_boss").innerHTML = " ";
 				document.getElementById("timer").innerHTML = " ";
+				
 			}
 			if ((lvl/little_boss_lvl)===1){
+				
 				if (timer <= 0){
 					timer = 0;
 					lvl = 1;
 					current_health_point = 4;
 					max_health_point = 4;
+					little_boss_lvl = 5;
+					big_boss_lvl = 10;
 					document.getElementById("timer").innerHTML = " ";
 					document.getElementById("little_boss").innerHTML = " ";
 				}
 			}
 			if ((lvl/big_boss_lvl)===1){
 
-				if (timer <= 0){
-					timer = 0;
-					lvl = 1;
-					current_health_point = 4;
-					max_health_point = 4;
+				if (timer < 1){
+					reset_to_lvl_1();
 					document.getElementById("timer").innerHTML = " ";
 					document.getElementById("big_boss").innerHTML = " ";
 				}
@@ -167,6 +158,12 @@
 			timer = timer - 1;
 			document.getElementById("timer").innerHTML = timer;
 		}
+	}
+	function reset_to_lvl_1(){
+		lvl = 1;
+		current_health_point = 4;
+		max_health_point = current_health_point;
+		
 	}
 
 	function view_click_info_window(){
