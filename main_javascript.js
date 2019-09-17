@@ -111,6 +111,7 @@
 
 			enemy_down_or_up = ((Math.random()*30)+(-0));
 			enemy_left_or_right = ((Math.random()*48)+0);
+
 			document.getElementById("enemy_button").style.marginLeft = enemy_left_or_right+"%";
 			document.getElementById("enemy_button").style.marginTop = enemy_down_or_up+"%";
 
@@ -180,7 +181,6 @@
 	}
 
 	function view_click_info_window(){
-		visibility_of_click_window = document.getElementById("click_info_window");
 		if(visibility_of_click_window.style.display === "none"){
 			visibility_of_click_window.style.display = "block";
 			visibility_of_worker_window.style.display = "none";
