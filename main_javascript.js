@@ -109,8 +109,9 @@
 
 	function health_point_greater_zero(){
 
-			enemy_down_or_up = ((Math.random()*16)+(-0));
-			enemy_left_or_right = ((Math.random()*70)+5);
+			enemy_down_or_up = ((Math.random()*30)+(-0));
+			enemy_left_or_right = ((Math.random()*48)+0);
+
 			document.getElementById("enemy_button").style.marginLeft = enemy_left_or_right+"%";
 			document.getElementById("enemy_button").style.marginTop = enemy_down_or_up+"%";
 
@@ -176,10 +177,7 @@
 			var rand_pic = enemy_graphics_array[Math.floor(Math.random()*enemy_graphics_array.length)];
 			document.getElementById("enemy_button").src = rand_pic;
 			timer=30;
-
 		}
-
-
 	}
 
 	function view_click_info_window(){
@@ -240,4 +238,8 @@
 			visibility_of_shop_window.style.display = "none";
 			visibility_of_setting_window.style.display = "none";
 		}
+	}
+	function showTooltip(id){
+		tooltip = document.getElementById(id);
+		tooltip.style.display = "block";
 	}

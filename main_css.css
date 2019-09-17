@@ -4,6 +4,7 @@
 }
 body{
 	font-family:Arial;
+	background-color: black;
 }
 h1{
 	margin-top:1%;
@@ -25,13 +26,21 @@ header{
 	font-size:140%;
 }
 content{
+
+}
+#content_left{
 	position:absolute;
-	width:65%;
+
 	margin-top:10%;
+	margin-left:5%;
+	width:80%;
+	height:70%;
 	background-image:url("background_graphics/room_background.jpg");
 	background-size:contain;
 	background-repeat: no-repeat;
-	height:70%;
+}
+#content_right{
+
 }
 #health_point{
 	color:white;
@@ -48,13 +57,7 @@ content{
 	border: 2%;
 }
 footer{
-	background-color:black;
-	color:white;
-	position:absolute;
-	width:100%;
-	margin-top:40%;
-	height:34.8%;
-	background-size:100%;
+
 }
 #level{
 	text-align:center;
@@ -80,6 +83,10 @@ footer{
 	border-width:auto;
 	border-color:white;
 }
+#increase_click_strength{
+	width:10%;
+	height:auto;
+}
 #little_boss{
 	position: absolute;
 	text-align:center;
@@ -98,67 +105,82 @@ footer{
 }
 #click_info_button{
 	position:absolute;
-	width: 12%;
-	height: 15%;
+	margin-left:51.1%;
+	margin-top:10%;
+	width: 8%;
+	height: 12%;
 	background-color:#8CE176;
 	border: none;
 }
+.tooltip {
+  position: absolute;
+  display: none;
+  background-color: #FFFFFF;
+}
 #click_info_window{
 	position:absolute;
-	margin-left:12%;
+	margin-top:15.6%;
+	padding-top:1%;
+	margin-left:51.1%;
 	background-color:#8CE176;
-	width:85%;
-	height:60%;
+	width:32%;
+	height:56%;
 	display:none;
 }
 #worker_info_button{
 	position:absolute;
-	margin-top:2.5%;
-	width: 12%;
-	height: 15%;
+	margin-top:10%;
+	margin-left:59.1%;
+	width: 8%;
+	height: 12%;
 	background-color:#65A0BE;
 	border: none;
 }
 #worker_info_window{
 	position:absolute;
-	margin-left:12%;
+	padding-top:1%;
+	margin-top:15.6%;
+	margin-left:51.1%;
 	background-color:#65A0BE;
-	width:85%;
-	height:60%;
+	width:32%;
+	height:56%;
 	display:none;
 }
 #shop_info_button{
 	position:absolute;
-	margin-top:4.95%;
-	width: 12%;
-	height: 15%;
+	margin-top:10%;
+	margin-left:67.1%;
+	width: 8%;
+	height: 12%;
 	background-color:#CD9363;
 	border: none;
 }
 #shop_info_window{
 	position:absolute;
-	margin-left:12%;
+	padding-top:1%;
+	margin-top:15.6%;
+	margin-left:51.1%;
 	background-color:#CD9363;
-	width:85%;
-	height:60%;
+	width:32%;
+	height:56%;
 	display:none;
 }
 #setting_info_button{
 	position:absolute;
-	margin-top:7.45%;
-	width: 12%;
-	height: 15%;
+	margin-top:10%;
+	margin-left:75.1%;
+	width: 8%;
+	height: 12%;
 	background-color:#C9605B;
 	border: none;
 }
 #setting_info_window{
 	position:absolute;
-	margin-left:12%;
+	padding-top:1%;
+	margin-top:15.6%;
+	margin-left:51.1%;
 	background-color:#C9605B;
-	width:85%;
-	height:60%;
+	width:32%;
+	height:56%;
 	display:none;
-}
-#bug_exception{
-	border-color:white;
-}
+

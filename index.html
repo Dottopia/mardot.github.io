@@ -20,51 +20,54 @@ HTML Code, der den Inhalt der Webseite zeigen soll, unterschieden werden die Ber
 			</div>
 		</header>
 		<content>
-
-			<form method="post" name="click">
+			<div id="content_left">
+				<form method="post" name="click">
+					<div>
+						<img src="enemy_graphics/mouse.png" onclick="clicking()" type="button" id="enemy_button" alt="enemy_picture"/>
+					</div>
+				</form>
+			</div>
+			<div>
 				<div>
-					<img src="enemy_graphics/mouse.png" onclick="clicking()" type="button" id="enemy_button" alt="enemy_picture"/>
+					<img src="icon_graphics/click_hand.png" onclick="view_click_info_window()" type="button" id="click_info_button" alt="click_icon"/>
+					<div id="click_info_window">
+						<form method="post" name="skills">
+							<fieldset>
+								<legend>Skills</legend>
+								<div>
+									EXP: <span id="experience">0</span>
+									Click strength: <span id="click_strength">1</span>
+								</div>
+								<div>
+									<img src="icon_graphics/increase_click_strength.png" id="increase_click_strength" type="button" onclick="increase_strength()" alt="sword_icon" onmouseover="showTooltip('1')"/>
+									<span id="1" class="tooltip">Increase the click strength</span>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+				<div>
+					<img src="icon_graphics/worker_humans.png" onclick="view_worker_info_window()" type="button" id="worker_info_button" alt="human_icon"/>
+					<div id="worker_info_window">
 
+					</div>
+				</div>
+				<div>
+					<img src="icon_graphics/shop_gold.png" onclick="view_shop_info_window()" type="button" id="shop_info_button" alt="gold_icon"/>
+					<div id="shop_info_window">
+
+					</div>
+				</div>
+				<div>
+					<img src="icon_graphics/setting_zahnrad.png" onclick="view_setting_info_window()" type="button" id="setting_info_button" alt="setting_icon"/>
+					<div id="setting_info_window">
+
+					</div>
 
 				</div>
-			</form>
+			</div>
 		</content>
 		<footer>
-			<div>
-				<button onclick="view_click_info_window()" type="button" id="click_info_button">Click Info</button>
-				<div id="click_info_window">
-					<form method="post" name="skills">
-						<fieldset>
-							<legend>Skills</legend>
-							<div>
-								EXP: <span id="experience">0</span>
-							</div>
-							<div>
-								<button type="button" onclick="increase_strength()">Increase click Strength; Cost: 5EXP</button>
-								Click strength: <span id="click_strength">1</span>
-							</div>
-						</fieldset>
-					</form>
-				</div>
-			</div>
-			<div>
-				<button onclick="view_worker_info_window()" type="button" id="worker_info_button">Worker Info</button>
-				<div id="worker_info_window">
-
-				</div>
-			</div>
-			<div>
-				<button onclick="view_shop_info_window()" type="button" id="shop_info_button">Shop Info</button>
-				<div id="shop_info_window">
-
-				</div>
-			</div>
-			<div>
-				<button onclick="view_setting_info_window()" type="button" id="setting_info_button">Setting Info</button>
-				<div id="setting_info_window">
-
-				</div>
-			</div>
 		</footer>
   </body>
 </html>
