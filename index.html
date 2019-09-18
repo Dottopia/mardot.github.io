@@ -36,11 +36,11 @@ HTML Code, der den Inhalt der Webseite zeigen soll, unterschieden werden die Ber
 								<legend>Skills</legend>
 								<div>
 									EXP: <span id="experience">0</span>
-									Click strength: <span id="click_strength">1</span>
 								</div>
 								<div>
-									<img src="icon_graphics/increase_click_strength.png" id="increase_click_strength" type="button" onclick="increase_strength()" alt="sword_icon" onmouseover="showTooltip('1')"/>
-									<span id="1" class="tooltip">Increase the click strength</span>
+									<img src="icon_graphics/increase_click_strength.png" id="increase_click_strength" type="button" onclick="increase_strength()" alt="sword_icon" onmouseover="show_tooltip('increase_click_strength_text')" onmouseleave="hide_tooltip()"/>
+									<span id="increase_click_strength_text" class="tooltip">Increase the click strength</span>
+									Click strength: <span id="click_strength">1</span>
 								</div>
 							</fieldset>
 						</form>
@@ -63,7 +63,6 @@ HTML Code, der den Inhalt der Webseite zeigen soll, unterschieden werden die Ber
 					<div id="setting_info_window">
 
 					</div>
-
 				</div>
 			</div>
 		</content>

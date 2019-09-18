@@ -13,10 +13,6 @@
 	var enemy_left_or_right;
 	var enemy_down_or_up;
 	var timer = 5;
-	var visibility_of_click_window;
-	var visibility_of_worker_window;
-	var visibility_of_shop_window;
-	var visibility_of_setting_window;
 	var next_level_is_no_boss_level;
 	var next_level_is_big_boss_level;
 	var next_level_is_little_boss_level;
@@ -111,7 +107,6 @@
 
 			enemy_down_or_up = ((Math.random()*30)+(-0));
 			enemy_left_or_right = ((Math.random()*48)+0);
-
 			document.getElementById("enemy_button").style.marginLeft = enemy_left_or_right+"%";
 			document.getElementById("enemy_button").style.marginTop = enemy_down_or_up+"%";
 
@@ -181,65 +176,65 @@
 	}
 
 	function view_click_info_window(){
-		if(visibility_of_click_window.style.display === "none"){
-			visibility_of_click_window.style.display = "block";
-			visibility_of_worker_window.style.display = "none";
-			visibility_of_shop_window.style.display = "none";
-			visibility_of_setting_window.style.display = "none";
+		if(document.getElementById("click_info_window").style.display === "none"){
+			document.getElementById("click_info_window").style.display = "block";
+			document.getElementById("worker_info_window").style.display = "none";
+			document.getElementById("shop_info_window").style.display = "none";
+			document.getElementById("setting_info_window").style.display = "none";
 		}
 		else{
-			visibility_of_click_window.style.display = "none";
-			visibility_of_worker_window.style.display = "none";
-			visibility_of_shop_window.style.display = "none";
-			visibility_of_setting_window.style.display = "none";
+			document.getElementById("click_info_window").style.display = "none";
+			document.getElementById("worker_info_window").style.display = "none";
+			document.getElementById("shop_info_window").style.display = "none";
+			document.getElementById("setting_info_window").style.display = "none";
 		}
 	}
 	function view_worker_info_window(){
-		visibility_of_worker_window = document.getElementById("worker_info_window");
-		if(visibility_of_worker_window.style.display === "none"){
-			visibility_of_click_window.style.display = "none";
-			visibility_of_worker_window.style.display = "block";
-			visibility_of_shop_window.style.display = "none";
-			visibility_of_setting_window.style.display = "none";
+		if(document.getElementById("worker_info_window").style.display === "none"){
+			document.getElementById("click_info_window").style.display = "none";
+			document.getElementById("worker_info_window").style.display = "block";
+			document.getElementById("shop_info_window").style.display = "none";
+			document.getElementById("setting_info_window").style.display = "none";
 		}
 		else{
-			visibility_of_click_window.style.display = "none";
-			visibility_of_worker_window.style.display = "none";
-			visibility_of_shop_window.style.display = "none";
-			visibility_of_setting_window.style.display = "none";
+			document.getElementById("click_info_window").style.display = "none";
+			document.getElementById("worker_info_window").style.display = "none";
+			document.getElementById("shop_info_window").style.display = "none";
+			document.getElementById("setting_info_window").style.display = "none";
 		}
 	}
 	function view_shop_info_window(){
-		visibility_of_shop_window = document.getElementById("shop_info_window");
-		if(visibility_of_shop_window.style.display === "none"){
-			visibility_of_click_window.style.display = "none";
-			visibility_of_worker_window.style.display = "none";
-			visibility_of_shop_window.style.display = "block";
-			visibility_of_setting_window.style.display = "none";
+		if(document.getElementById("shop_info_window").style.display === "none"){
+			document.getElementById("click_info_window").style.display = "none";
+			document.getElementById("worker_info_window").style.display = "none";
+			document.getElementById("shop_info_window").style.display = "block";
+			document.getElementById("setting_info_window").style.display = "none";
 		}
 		else{
-			visibility_of_click_window.style.display = "none";
-			visibility_of_worker_window.style.display = "none";
-			visibility_of_shop_window.style.display = "none";
-			visibility_of_setting_window.style.display = "none";
+			document.getElementById("click_info_window").style.display = "none";
+			document.getElementById("worker_info_window").style.display = "none";
+			document.getElementById("shop_info_window").style.display = "none";
+			document.getElementById("setting_info_window").style.display = "none";
 		}
 	}
 	function view_setting_info_window(){
-		visibility_of_setting_window = document.getElementById("setting_info_window");
-		if(visibility_of_setting_window.style.display === "none"){
-			visibility_of_click_window.style.display = "none";
-			visibility_of_worker_window.style.display = "none";
-			visibility_of_shop_window.style.display = "none";
-			visibility_of_setting_window.style.display = "block";
+		if(document.getElementById("setting_info_window").style.display === "none"){
+			document.getElementById("click_info_window").style.display = "none";
+			document.getElementById("worker_info_window").style.display = "none";
+			document.getElementById("shop_info_window").style.display = "none";
+			document.getElementById("setting_info_window").style.display = "block";
 		}
 		else{
-			visibility_of_click_window.style.display = "none";
-			visibility_of_worker_window.style.display = "none";
-			visibility_of_shop_window.style.display = "none";
-			visibility_of_setting_window.style.display = "none";
+			document.getElementById("click_info_window").style.display = "none";
+			document.getElementById("worker_info_window").style.display = "none";
+			document.getElementById("shop_info_window").style.display = "none";
+			document.getElementById("setting_info_window").style.display = "none";
 		}
 	}
-	function showTooltip(id){
+	function show_tooltip(id){
 		tooltip = document.getElementById(id);
 		tooltip.style.display = "block";
+	}
+	function hide_tooltip(){
+		tooltip.style.display = "none";
 	}
