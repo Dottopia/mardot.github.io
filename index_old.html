@@ -1,0 +1,82 @@
+<!--
+HTML Code, der den Inhalt der Webseite zeigen soll, unterschieden werden die Bereiche Head, Content und Footer.
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tap to Adventure</title>
+		<link rel="stylesheet" href="main_css.css"/>
+		<script language="javascript" type="text/javascript" src="main_javascript.js"></script>
+	</head>
+	<body>
+		<header>
+			<div>
+				<h1>Tap to Adventure</h1>
+				<span id ="level">Level: 1</span>
+				<div id="header_right">
+					<span id ="timer"></span>
+					<span id ="little_boss"></span>
+					<span id ="big_boss"></span>
+					<span id ="health_point">Health: 4</span>
+				</div>
+				<div id="header_left">
+					<div id ="health_bar_enemy">
+						<div id ="health_bar_enemy_inner"></div>
+					</div>
+					<div id ="health_bar_player">
+						<div id ="health_bar_player_inner"></div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<content>
+			<div id="content_left">
+				<form method="post" name="click">
+					<div>
+						<img src="enemy_graphics/mouse.png" onclick="clicking()" type="button" id="enemy_button" alt="enemy_picture"/>
+					</div>
+				</form>
+			</div>
+			<div>
+				<div>
+					<img src="icon_graphics/click_hand.png" onclick="view_click_info_window()" type="button" id="click_info_button" alt="click_icon"/>
+					<div id="click_info_window">
+						<form method="post" name="skills">
+							<fieldset>
+								<legend>Skills</legend>
+								<div>
+									EXP: <span id="experience">0</span>
+								</div>
+								<div>
+									<img src="icon_graphics/increase_click_strength.png" id="increase_click_strength" type="button" onclick="increase_strength()" alt="sword_icon" onmouseover="show_tooltip('increase_click_strength_text')" onmouseleave="hide_tooltip()"/>
+									<span id="increase_click_strength_text" class="tooltip">Increase the click strength</span>
+									Click strength: <span id="click_strength">1</span>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+				<div>
+					<img src="icon_graphics/worker_humans.png" onclick="view_worker_info_window()" type="button" id="worker_info_button" alt="human_icon"/>
+					<div id="worker_info_window">
+
+					</div>
+				</div>
+				<div>
+					<img src="icon_graphics/shop_gold.png" onclick="view_shop_info_window()" type="button" id="shop_info_button" alt="gold_icon"/>
+					<div id="shop_info_window">
+
+					</div>
+				</div>
+				<div>
+					<img src="icon_graphics/setting_zahnrad.png" onclick="view_setting_info_window()" type="button" id="setting_info_button" alt="setting_icon"/>
+					<div id="setting_info_window">
+
+					</div>
+				</div>
+			</div>
+		</content>
+		<footer>
+		</footer>
+  </body>
+</html>

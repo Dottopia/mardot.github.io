@@ -1,0 +1,221 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	font-family:Arial;
+	background-color: black;
+}
+h1{
+	margin-top:1%;
+	text-align:center;
+}
+header{
+	border:2px solid #7f1dFF;
+	background-color:black;
+	color:white;
+	position:absolute;
+	width:100%;
+	height:500px;
+	background-size:100%;
+}
+#timer{
+	position:absolute;
+	margin-left:68%;
+	margin-top:2.8%;
+	font-weight:bold;
+	font-size:140%;
+}
+content{
+
+}
+#content_left{
+	position:absolute;
+	margin-top:10%;
+	margin-left:8%;
+	width:80%;
+	height:70%;
+	background-image:url("background_graphics/room_background.jpg");
+	background-size:contain;
+	background-repeat: no-repeat;
+}
+#content_right{
+
+}
+#health_point{
+	color:white;
+	position:absolute;
+	margin-top:4%;
+	margin-left:48%;
+	background-color:red;
+}
+
+/*''#health_bar{
+	color:red;
+	background-color:red;
+	width:20%;
+	border-color:white;
+	border: 2%;
+}*/
+
+footer{
+
+}
+
+#header_left{
+
+	float: left;
+	margin-left: 8%;
+	width:35%;
+	height:80px;
+	border: 2px solid #7f1dFF;
+
+}
+
+#header_right{
+	position:auto;
+}
+
+#level{
+	text-align:center;
+	display:block;
+	color:white;
+	position:absolute;
+	width:100%;
+	height:5%;
+	margin-top:2%;
+}
+
+#health_bar_enemy{
+	border: 2px solid #7f1d31;
+	margin: auto;
+	margin-top: 10px;
+	width: 500px;
+	height: 20px;
+}
+
+#health_bar_player{
+	border: 2px solid #7f1d31;
+	margin: auto;
+	margin-top: 10px;
+	width: 500px;
+	height: 20px;
+}
+
+#enemy_button{
+	position:absolute;
+	width:10%;
+	height:auto;
+	margin-top:0%;
+	margin-left:40%;
+	color:white;
+}
+#skills{
+	position:absolute;
+	margin-left:5%;
+	padding:2%;
+	border-width:auto;
+	border-color:white;
+}
+#increase_click_strength{
+	width:10%;
+	height:auto;
+}
+#little_boss{
+	position: absolute;
+	text-align:center;
+	display:block;
+	margin-left:60%;
+	margin-top:3%;
+	font-weight:bold;
+}
+#big_boss{
+	position: absolute;
+	text-align:center;
+	display:block;
+	margin-left:60%;
+	margin-top:3%;
+	font-weight:bold;
+}
+#click_info_button{
+	position:absolute;
+	margin-left:54.1%;
+	margin-top:10%;
+	width: 8%;
+	height: 12%;
+	background-color:#8CE176;
+	border: none;
+}
+.tooltip {
+	position: absolute;
+	display: none;
+	background-color: #FFFFFF;
+}
+
+#click_info_window{
+	position:absolute;
+	margin-top:15.6%;
+	padding-top:1%;
+	margin-left:54.1%;
+	background-color:#8CE176;
+	width:32%;
+	height:56%;
+	display:none;
+}
+#worker_info_button{
+	position:absolute;
+	margin-top:10%;
+	margin-left:62.1%;
+	width: 8%;
+	height: 12%;
+	background-color:#65A0BE;
+	border: none;
+}
+#worker_info_window{
+	position:absolute;
+	padding-top:1%;
+	margin-top:15.6%;
+	margin-left:54.1%;
+	background-color:#65A0BE;
+	width:32%;
+	height:56%;
+	display:none;
+}
+#shop_info_button{
+	position:absolute;
+	margin-top:10%;
+	margin-left:70.1%;
+	width: 8%;
+	height: 12%;
+	background-color:#CD9363;
+	border: none;
+}
+#shop_info_window{
+	position:absolute;
+	padding-top:1%;
+	margin-top:15.6%;
+	margin-left:54.1%;
+	background-color:#CD9363;
+	width:32%;
+	height:56%;
+	display:none;
+}
+#setting_info_button{
+	position:absolute;
+	margin-top:10%;
+	margin-left:78.1%;
+	width: 8%;
+	height: 12%;
+	background-color:#C9605B;
+	border: none;
+}
+#setting_info_window{
+	position:absolute;
+	padding-top:1%;
+	margin-top:15.6%;
+	margin-left:54.1%;
+	background-color:#C9605B;
+	width:32%;
+	height:56%;
+	display:none;
+}

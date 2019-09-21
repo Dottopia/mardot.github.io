@@ -13,59 +13,94 @@ HTML Code, der den Inhalt der Webseite zeigen soll, unterschieden werden die Ber
 			<div>
 				<h1>Tap to Adventure</h1>
 				<span id ="level">Level: 1</span>
-				<span id ="timer"></span>
-				<span id ="little_boss"></span>
-				<span id ="big_boss"></span>
-				<span id ="health_point">Health: 4</span>
 			</div>
 		</header>
+
 		<content>
-			<div id="content_left">
-				<form method="post" name="click">
-					<div>
-						<img src="enemy_graphics/mouse.png" onclick="clicking()" type="button" id="enemy_button" alt="enemy_picture"/>
-					</div>
-				</form>
-			</div>
-			<div>
-				<div>
-					<img src="icon_graphics/click_hand.png" onclick="view_click_info_window()" type="button" id="click_info_button" alt="click_icon"/>
-					<div id="click_info_window">
-						<form method="post" name="skills">
-							<fieldset>
-								<legend>Skills</legend>
-								<div>
-									EXP: <span id="experience">0</span>
-								</div>
-								<div>
-									<img src="icon_graphics/increase_click_strength.png" id="increase_click_strength" type="button" onclick="increase_strength()" alt="sword_icon" onmouseover="show_tooltip('increase_click_strength_text')" onmouseleave="hide_tooltip()"/>
-									<span id="increase_click_strength_text" class="tooltip">Increase the click strength</span>
-									Click strength: <span id="click_strength">1</span>
-								</div>
-							</fieldset>
-						</form>
-					</div>
+				<div id="info_content">
+					<span id="info_content_left">
+						<div style="height:20px;margin-top:10px;">
+							<span style="float: left;width:3em;">Enemy</span>
+							<span id ="health_bar_enemy">
+								<div id ="health_bar_enemy_inner"></div>
+							</span>
+							<span id ="health_point_enemy"></span>
+						</div>
+						<div style="height:20px;margin-top:10px;">
+							<span style="float: left;width:3em;">Player</span>
+							<span id ="health_bar_player">
+								<div id ="health_bar_player_inner"></div>
+							</span>
+							<span id ="health_point_player">5</span>
+						</div>
+					</span>
+
+					<span id="info_content_right">
+						<span id ="timer"></span>
+						<span id ="little_boss"></span>
+						<span id ="big_boss"></span>
+
+					</span>
 				</div>
-				<div>
-					<img src="icon_graphics/worker_humans.png" onclick="view_worker_info_window()" type="button" id="worker_info_button" alt="human_icon"/>
-					<div id="worker_info_window">
+
+				<div id="game_content">
+					<div id="game_content_left" >
+						<img src="background_graphics/room_background.jpg" onclick="misclicked()" type="button" id="background_picture_button" alt="background_picture" />
+						<img src="enemy_graphics/mouse3.png" onclick="clicking()" type="button" id="enemy_button" alt="enemy_picture"/>
+
+					</div>
+
+					<div id="game_content_right">
+						<div id="info_buttons">
+							<span style="float:left;">
+								<img src="icon_graphics/click_hand.png" onclick="view_click_info_window()" type="button" id="click_info_button" alt="click_icon"/>
+							</span>
+							<span style="float:left;">
+								<img src="icon_graphics/worker_humans.png" onclick="view_worker_info_window()" type="button" id="worker_info_button" alt="human_icon"/>
+
+							</span>
+							<span style="float:left;">
+								<img src="icon_graphics/shop_gold.png" onclick="view_shop_info_window()" type="button" id="shop_info_button" alt="gold_icon"/>
+							</span>
+							<span style="float:left;">
+								<img src="icon_graphics/setting_zahnrad.png" onclick="view_setting_info_window()" type="button" id="setting_info_button" alt="setting_icon"/>
+							</span>
+						</div>
+
+						<div id="click_info_window">
+							<form method="post" name="skills">
+								<fieldset>
+									<legend>Skills</legend>
+									<div>
+										EXP: <span id="experience">0</span>
+									</div>
+									<div>
+										<img src="icon_graphics/increase_click_strength.png" id="increase_click_strength" type="button" onclick="increase_strength()" alt="sword_icon" onmouseover="show_tooltip('increase_click_strength_text')" onmouseleave="hide_tooltip()"/>
+										<span id="increase_click_strength_text" class="tooltip">Increase the click strength</span>
+										Click strength: <span id="click_strength">1</span>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+
+						<div id="worker_info_window">
+
+						</div>
+
+						<div id="shop_info_window">
+
+						</div>
+
+						<div id="setting_info_window">
+
+						</div>
+
 
 					</div>
 				</div>
-				<div>
-					<img src="icon_graphics/shop_gold.png" onclick="view_shop_info_window()" type="button" id="shop_info_button" alt="gold_icon"/>
-					<div id="shop_info_window">
 
-					</div>
-				</div>
-				<div>
-					<img src="icon_graphics/setting_zahnrad.png" onclick="view_setting_info_window()" type="button" id="setting_info_button" alt="setting_icon"/>
-					<div id="setting_info_window">
+			</content>
 
-					</div>
-				</div>
-			</div>
-		</content>
 		<footer>
 		</footer>
   </body>
