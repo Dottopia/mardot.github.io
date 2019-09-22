@@ -25,8 +25,7 @@ ladeseite mit spielname und loading bar...
 special effects
 sound einstellungen
 ladeseite mit spielname und loading bar...
-execution button
 boss stachel wespe, böse katze
 special effects
-timer geht doppelt so schnell
-images
+timer geht doppelt so schnell_check
+images_inbearbeitung
