@@ -1,5 +1,5 @@
 	var click = 0;
-	var click_attack = 10;
+	var click_attack = 1;
 	var lvl = 1;
 	var next_lvl;
 	var experience = 0;
@@ -10,6 +10,8 @@
 	var worker = 0;
 	var max_health_point = 4;
 	var current_health_point = max_health_point;
+	var max_health_point_player = 5;
+	var current_health_point_player = max_health_point_player;
 	var enemy_left_or_right;
 	var enemy_down_or_up;
 	var timer = 5;
@@ -30,6 +32,7 @@
 		click = click + 1;
 		health_bar_enemy_inner_width=(current_health_point-click_attack)/max_health_point;
 		current_health_point = current_health_point - click_attack;
+		document.getElementById("health_bar_enemy_inner").style.width = (health_bar_enemy_inner_width*100)+"%";
 
 		if (current_health_point < 1){
 			health_point_less_zero();
@@ -49,6 +52,7 @@
 		this_level_is_no_boss_level=((lvl!==little_boss_lvl) && (lvl!==big_boss_lvl));
 		this_level_is_boss_level= ((lvl===little_boss_lvl) || (lvl===big_boss_lvl));
 
+
 		if (this_level_is_boss_level){
 			if ((lvl/little_boss_lvl)===1){
 				experience = experience + 3;
@@ -67,6 +71,7 @@
 			document.getElementById("timer").innerHTML = " ";
 			clearInterval(reset_to_lvl_1_interval);
 			clearInterval(all_boss_timer_interval);
+
 			timer = 30;
 		}
 
@@ -76,7 +81,7 @@
 			if (next_level_is_little_boss_level){
 
 					max_health_point = 10 * next_lvl;
-					current_health_point = max_health_point;
+
 					document.getElementById("enemy_button").src = "enemy_graphics/small_boss_wasp.png";
 					document.getElementById("little_boss").innerHTML = "Little Boss";
 					document.getElementById("big_boss").innerHTML = " ";
@@ -86,7 +91,7 @@
 
 			if (next_level_is_big_boss_level){
 					max_health_point = 10 * next_lvl;
-					current_health_point = max_health_point;
+
 					document.getElementById("enemy_button").src = "enemy_graphics/big_boss_cat.png";
 					document.getElementById("little_boss").innerHTML = " ";
 					document.getElementById("big_boss").innerHTML = "Big Boss";
@@ -96,25 +101,23 @@
 
 				if(next_level_is_no_boss_level){
 					max_health_point = 4 * next_lvl;
-					current_health_point = max_health_point;
+
 					document.getElementById("little_boss").innerHTML = " ";
 					document.getElementById("big_boss").innerHTML = " ";
 					document.getElementById("timer").innerHTML = " ";
 				}
+				current_health_point = max_health_point;
 		}
 			lvl = next_lvl;
+			document.getElementById("health_bar_enemy_inner").style.width = "100%";
+			health_bar_enemy_inner_width=health_bar_enemy;
 	}
 
 	function health_point_greater_zero(){
+		//document.getElementById("timer").innerHTML = health_bar_enemy_inner_width;
+		//document.getElementById("timer").innerhtml = "hallo";
+		spawn();
 
-
-		document.getElementById("health_bar_enemy_inner").style.width = (health_bar_enemy_inner_width*100)+"%";
-		document.getElementById("timer").innerHTML = health_bar_enemy_inner_width;
-
-			enemy_down_or_up = ((Math.random()*30)+(-0));
-			enemy_left_or_right = ((Math.random()*48)+0);
-			document.getElementById("enemy_button").style.marginLeft = enemy_left_or_right+"%";
-			document.getElementById("enemy_button").style.marginTop = enemy_down_or_up+"%";
 
 			if (((lvl/little_boss_lvl)!==1) && ((lvl/big_boss_lvl)!==1)){
 				document.getElementById("little_boss").innerHTML = " ";
@@ -137,11 +140,15 @@
 	}
 
 	function message_output(){
-		document.getElementById("level").innerHTML = "Level: "+lvl;
-		document.getElementById("experience").innerHTML = experience;
-		document.getElementById("health_point_enemy").innerHTML = current_health_point+" / "+max_health_point;
-		document.getElementById("click_strength").innerHTML = click_attack;
-		document.getElementById("amount_of_worker").innerHTML = worker;
+		setInterval(function(){
+			document.getElementById("level").innerHTML = "Level: "+lvl;
+			document.getElementById("experience").innerHTML = experience;
+			document.getElementById("health_point_enemy").innerHTML = current_health_point+" / "+max_health_point;
+			document.getElementById("health_point_player").innerHTML = current_health_point_player+" / "+max_health_point_player;
+			document.getElementById("click_strength").innerHTML = click_attack;
+			document.getElementById("amount_of_worker").innerHTML = worker;
+			document.getElementById("health_bar_enemy_inner").style.width = (health_bar_enemy_inner_width*100)+"%";
+		},100);
 	}
 	function increase_strength(){
 		if(experience >= 5){
@@ -164,7 +171,24 @@ function random_enemy(){
 	}
 }
 
+function spawn(){
+	var background_img_width = document.getElementById("background_picture_button").width;
+	var background_img_height = document.getElementById("background_picture_button").height;
+	var enemy_button_width = document.getElementById("enemy_button").width;
+	var enemy_button_height = document.getElementById("enemy_button").height;
+
+
+
+	enemy_down_or_up = (Math.random()*(background_img_height-enemy_button_height));
+	enemy_left_or_right = (Math.random()*(background_img_width-enemy_button_width));
+	//document.getElementById("timer").innerhtml = "hallo";
+	document.getElementById("enemy_button").style.marginLeft = enemy_left_or_right+"px";
+	document.getElementById("enemy_button").style.marginTop = enemy_down_or_up+"px";
+
+}
+
 	function misclicked(){
+		current_health_point_player--;
 		health_bar_player_inner_width=health_bar_player_inner_width-20;
 		//document.getElementById("timer").innerHTML = health_bar_player_inner_width;
 		document.getElementById("health_bar_player_inner").style.width = health_bar_player_inner_width+"%";
