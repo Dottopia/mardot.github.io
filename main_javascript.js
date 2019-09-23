@@ -1,5 +1,5 @@
 	var click = 0;
-	var click_attack = 1;
+	var click_attack = 10;
 	var lvl = 1;
 	var next_lvl;
 	var experience = 0;
@@ -167,7 +167,9 @@ function random_enemy(){
 	var rand_pic = enemy_graphics_array[Math.floor(Math.random()*enemy_graphics_array.length)];
 	document.getElementById("enemy_button").src = rand_pic;
 	if (rand_pic==="enemy_graphics/spider.png"){
-
+		//document.getElementById("timer").top=document.getElementById('background_picture_button').top;
+		//document.getElementById("timer").left=document.getElementById('enemy_button').center;
+		//document.getElementById("timer").height=document.getElementById('background_picture_button').top-document.getElementById('enemy_button').top;
 	}
 }
 

@@ -111,10 +111,11 @@ content{
 
 #timer{
 	margin:10px;
-	--border: 1px solid red;
+	--border-left: 1px solid red;
+
 	font-weight:bold;
 	font-size:140%;
-	width:auto;
+	--width:auto;
 
 }
 
