@@ -14,7 +14,7 @@
 	var current_health_point_player = max_health_point_player;
 	var enemy_left_or_right;
 	var enemy_down_or_up;
-	var timer = 5;
+	var timer = 15;
 	var next_level_is_no_boss_level;
 	var next_level_is_big_boss_level;
 	var next_level_is_little_boss_level;
@@ -22,6 +22,8 @@
 	var enemy_graphics_array = ["enemy_graphics/mouse3.png", "enemy_graphics/bee.png","enemy_graphics/ant.png","enemy_graphics/spider.png","enemy_graphics/fly.png"];
 	var health_bar_enemy_inner_width = 100;
 	var health_bar_player_inner_width = 100;
+	var game_content_left_width = 400;
+	var game_content_left_height = 300;
 
 	var message_output_interval = setInterval(message_output(),100);
 	var reset_to_lvl_1_interval;
@@ -65,7 +67,7 @@
 
 			}
 			max_health_point = 4 * next_lvl;
-			current_health_point = max_health_point;
+			document.getElementById("enemy_button").style.width="80px";
 			document.getElementById("little_boss").innerHTML = " ";
 			document.getElementById("big_boss").innerHTML = " ";
 			document.getElementById("timer").innerHTML = " ";
@@ -83,6 +85,7 @@
 					max_health_point = 10 * next_lvl;
 
 					document.getElementById("enemy_button").src = "enemy_graphics/small_boss_wasp.png";
+					document.getElementById("enemy_button").style.width="120px";
 					document.getElementById("little_boss").innerHTML = "Little Boss";
 					document.getElementById("big_boss").innerHTML = " ";
 					all_boss_timer_interval = setInterval(all_boss_timer,1000);
@@ -105,9 +108,11 @@
 					document.getElementById("little_boss").innerHTML = " ";
 					document.getElementById("big_boss").innerHTML = " ";
 					document.getElementById("timer").innerHTML = " ";
+					document.getElementById("enemy_button").style.width="80px";
 				}
-				current_health_point = max_health_point;
+
 		}
+			current_health_point = max_health_point;
 			lvl = next_lvl;
 			document.getElementById("health_bar_enemy_inner").style.width = "100%";
 			health_bar_enemy_inner_width=health_bar_enemy;
@@ -117,6 +122,7 @@
 		//document.getElementById("timer").innerHTML = health_bar_enemy_inner_width;
 		//document.getElementById("timer").innerhtml = "hallo";
 		spawn();
+
 
 
 			if (((lvl/little_boss_lvl)!==1) && ((lvl/big_boss_lvl)!==1)){
@@ -137,6 +143,42 @@
 					clearInterval(all_boss_timer_interval);
 				}
 			}
+
+			if (((lvl/little_boss_lvl)===1)&&((health_point_enemy/max_health_point)<0.5)){
+				document.getElementById("enemy_weapon_button").src="enemy_graphics/small_boss_wasp_stinger.png";
+				document.getElementById("enemy_weapon_button").style.visibility="visible";
+				setInterval(function(){
+					document.getElementById("enemy_weapon_button").style.marginLeft=(Math.random()*game_content_left_width)+"px";
+					document.getElementById("enemy_weapon_button").style.marginTop=(Math.random()*game_content_left_height)+"px";
+					//document.getElementById("timer").innerHTML = document.getElementById("enemy_weapon_button").style.marginLeft;
+				},1000);
+			}
+	}
+
+	function activate_shield(){
+		if ((document.getElementById("shield_button").style.marginTop==="10px")&&(document.getElementById("shield_button").style.marginLeft==="560px")){
+			document.getElementById("game_content_left").onmousemove= function(){
+				var x = event.clientX;
+				var y = event.clientY;
+
+				document.getElementById("shield_button").style.marginTop=(y-250)+"px";
+				document.getElementById("shield_button").style.marginLeft=(x-210)+"px";
+			};
+		}
+		else {
+			deactivate_shield();
+		}
+
+	}
+
+	function check_if_collision(){
+
+	}
+
+	function deactivate_shield(){
+		document.getElementById("game_content_left").onmousemove=null;
+		document.getElementById("shield_button").style.marginTop="10px";
+		document.getElementById("shield_button").style.marginLeft="560px";
 	}
 
 	function message_output(){

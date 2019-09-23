@@ -47,7 +47,8 @@ HTML Code, der den Inhalt der Webseite zeigen soll, unterschieden werden die Ber
 					<div id="game_content_left" >
 						<img src="background_graphics/room_background.jpg" onclick="misclicked()" type="button" id="background_picture_button" alt="background_picture" />
 						<img src="enemy_graphics/mouse3.png" onclick="clicking()" type="button" id="enemy_button" alt="enemy_picture"/>
-
+						<img src="" onclick="" type="button" id="enemy_weapon_button" alt="enemy_weapon_picture"/>
+						<img src="weapon_graphics/shield.png" onclick="activate_shield()" type="button" id="shield_button" alt="shield_picture"/>
 					</div>
 
 					<div id="game_content_right">
@@ -69,13 +70,13 @@ HTML Code, der den Inhalt der Webseite zeigen soll, unterschieden werden die Ber
 
 						<div id="click_info_window">
 							<form method="post" name="skills">
-								<fieldset>
+								<fieldset id="skills">
 									<legend>Skills</legend>
 									<div>
-										EXP: <span id="experience">0</span>
-										Click strength: <span id="click_strength">1</span>
+										<span style="float:left;">EXP: </span><span id="experience" style="float:left;">0</span>
+										<span style="float:left;margin-left:50px;">Click strength: </span><span id="click_strength" style="float:left;">1</span>
 									</div>
-									<div>
+									<div style="margin-top:30px;">
 										<img src="icon_graphics/increase_click_strength.png" id="increase_click_strength" type="button" onclick="increase_strength()" alt="sword_icon" onmouseover="show_tooltip('increase_click_strength_text')" onmouseleave="hide_tooltip()"/>
 										<span id="increase_click_strength_text" class="tooltip">Increase the click strength</span>
 									</div>
