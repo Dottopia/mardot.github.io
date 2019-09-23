@@ -20,21 +20,24 @@ special effects
 images
 
 
+
 CATHERINE
 
-health bar 2 (spieler: generell auf 5)_check
+health bar 2 (spieler: generell auf 5)_erledigt
 
-größe der enemies_!!
+größe der enemies__erledigt
 
-enemy: button png, ungenaues klicken
+enemy: button png, ungenaues klicken_offen
 
 position der enemies_check
 
-spinne: faden
+spinne: faden_offen
 
-boss stachel wespe, böse katze
+boss stachel wespe_inbearbeitung
 
-fehlklick : healthbar des spielers minus eins_check
+böse katze
+
+fehlklick : healthbar des spielers minus eins_erledigt
 
 sound einstellungen
 
@@ -42,10 +45,6 @@ ladeseite mit spielname und loading bar_inbearbeitung
 
 special effects
 
-sound einstellungen
-
-boss stachel wespe, böse katze
-
-timer geht doppelt so schnell_check
+timer geht doppelt so schnell_erledigt
 
 images_inbearbeitung
