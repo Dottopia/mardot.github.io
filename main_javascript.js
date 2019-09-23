@@ -194,8 +194,9 @@ function spawn(){
 		health_bar_player_inner_width=health_bar_player_inner_width-20;
 		//document.getElementById("timer").innerHTML = health_bar_player_inner_width;
 		document.getElementById("health_bar_player_inner").style.width = health_bar_player_inner_width+"%";
-		if(health_bar_player_inner_width<1){
+		if(health_bar_player_inner_width < 1){
 			timer=0;
+			current_health_point_player = 5;
 			reset_to_lvl_1();
 		}
 	}

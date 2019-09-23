@@ -33,12 +33,12 @@ header{
 content{
 	--border: 1px solid green;
 	left:10%;
-	top:80px;
+	top:5%;
 	position:absolute;
 	padding: 10px;
 	--border:2px solid red;
-	width: 90%;
-	height:630px;
+	width:90%;
+	height:600px;
 
 }
 
@@ -46,7 +46,7 @@ content{
 	--border:2px solid green;
 	padding: 10px;
 	--position:absolute;
-	width:90%;
+	width:80%;
 	height: 80px;
 	margin: 0 auto;
 }
@@ -131,7 +131,7 @@ content{
 
 #game_content_left{
 	float:left;
-	width:650px;
+	width:auto;
 	height:100%;
 	position:relative;
 	--background-image:url("background_graphics/room_background.jpg");
@@ -169,6 +169,7 @@ content{
 	margin-top:3%;
 	font-weight:bold;
 }
+
 #big_boss{
 
 	text-align:center;
@@ -180,11 +181,12 @@ content{
 
 #game_content_right{
 	float:right;
-	width:40%;
+	width:45%;
 	height:100%;
 	border-radius: 5%;
 	--border: 1px solid red;
 }
+
 #info_buttons{
 	margin:0;
 	border-radius: 8% 8% 0 0;
@@ -210,14 +212,12 @@ content{
 	width: 80px;
 	height: 80px;
 	background-color:#CD9363;
-
 }
 
 #setting_info_button{
 	width: 80px;
 	height: 80px;
 	background-color:#C9605B;
-
 }
 
 #click_info_window{
@@ -225,7 +225,6 @@ content{
 	width:320px;
 	height:82%;
 	border-radius: 0 0 3% 3%;
-
 }
 
 #skills{
@@ -239,15 +238,12 @@ content{
 	height:auto;
 }
 
-
 .tooltip {
 	--position: absolute;
 	display: none;
 	background-color: #FFFFFF;
 	color:black;
 }
-
-
 
 #worker_info_window{
 	background-color:#65A0BE;
