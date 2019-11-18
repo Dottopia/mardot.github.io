@@ -37,7 +37,7 @@ div{
 }
 body{
 	font-family:Arial;
-	background-color: black;
+	--background-color: black;
 
 }
 h1{
