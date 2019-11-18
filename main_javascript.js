@@ -19,7 +19,8 @@
 	var next_level_is_big_boss_level;
 	var next_level_is_little_boss_level;
 	var this_level_is_no_boss_level;
-	var enemy_graphics_array = ["enemy_graphics/mouse3.png", "enemy_graphics/bee.png","enemy_graphics/ant.png","enemy_graphics/spider.png","enemy_graphics/fly.png"];
+	var enemy_graphics_array = ["enemy_graphics/mouse3.png", "enemy_graphics/bee.png","enemy_graphics/ant.png",
+	"enemy_graphics/spider.png","enemy_graphics/fly.png","enemy_graphics/butterfly.png", "enemy_graphics/bird.png", "enemy_graphics/dog.png"];
 	var health_bar_enemy_inner_width = 100;
 	var health_bar_player_inner_width = 100;
 	var game_content_left_width = 40;
@@ -206,13 +207,12 @@
 	}
 
 function random_enemy(){
+	
+		//document.getElementById("enemy_button").src = "enemy_graphics/pikachu.png";
+
 	var rand_pic = enemy_graphics_array[Math.floor(Math.random()*enemy_graphics_array.length)];
 	document.getElementById("enemy_button").src = rand_pic;
-	if (rand_pic==="enemy_graphics/spider.png"){
-		//document.getElementById("timer").top=document.getElementById('background_picture_button').top;
-		//document.getElementById("timer").left=document.getElementById('enemy_button').center;
-		//document.getElementById("timer").height=document.getElementById('background_picture_button').top-document.getElementById('enemy_button').top;
-	}
+
 }
 
 function spawn(){
