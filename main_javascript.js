@@ -22,8 +22,8 @@
 	var enemy_graphics_array = ["enemy_graphics/mouse3.png", "enemy_graphics/bee.png","enemy_graphics/ant.png","enemy_graphics/spider.png","enemy_graphics/fly.png"];
 	var health_bar_enemy_inner_width = 100;
 	var health_bar_player_inner_width = 100;
-	var game_content_left_width = 400;
-	var game_content_left_height = 300;
+	var game_content_left_width = 40;
+	var game_content_left_height = 25;
 
 	var message_output_interval = setInterval(message_output(),100);
 	var reset_to_lvl_1_interval;
@@ -67,7 +67,7 @@
 
 			}
 			max_health_point = 4 * next_lvl;
-			document.getElementById("enemy_button").style.width="80px";
+			document.getElementById("enemy_button").style.width="6em";
 			document.getElementById("little_boss").innerHTML = " ";
 			document.getElementById("big_boss").innerHTML = " ";
 			document.getElementById("timer").innerHTML = " ";
@@ -85,7 +85,7 @@
 					max_health_point = 10 * next_lvl;
 
 					document.getElementById("enemy_button").src = "enemy_graphics/small_boss_wasp.png";
-					document.getElementById("enemy_button").style.width="120px";
+					document.getElementById("enemy_button").style.width="8em";
 					document.getElementById("little_boss").innerHTML = "Little Boss";
 					document.getElementById("big_boss").innerHTML = " ";
 					all_boss_timer_interval = setInterval(all_boss_timer,1000);
@@ -108,7 +108,7 @@
 					document.getElementById("little_boss").innerHTML = " ";
 					document.getElementById("big_boss").innerHTML = " ";
 					document.getElementById("timer").innerHTML = " ";
-					document.getElementById("enemy_button").style.width="80px";
+					document.getElementById("enemy_button").style.width="7em";
 				}
 
 		}
@@ -148,21 +148,21 @@
 				document.getElementById("enemy_weapon_button").src="enemy_graphics/small_boss_wasp_stinger.png";
 				document.getElementById("enemy_weapon_button").style.visibility="visible";
 				setInterval(function(){
-					document.getElementById("enemy_weapon_button").style.marginLeft=(Math.random()*game_content_left_width)+"px";
-					document.getElementById("enemy_weapon_button").style.marginTop=(Math.random()*game_content_left_height)+"px";
+					document.getElementById("enemy_weapon_button").style.marginLeft=(Math.random()*game_content_left_width)+"em";
+					document.getElementById("enemy_weapon_button").style.marginTop=(Math.random()*game_content_left_height)+"em";
 					//document.getElementById("timer").innerHTML = document.getElementById("enemy_weapon_button").style.marginLeft;
 				},1000);
 			}
 	}
 
 	function activate_shield(){
-		if ((document.getElementById("shield_button").style.marginTop==="10px")&&(document.getElementById("shield_button").style.marginLeft==="560px")){
+		if ((document.getElementById("shield_button").style.marginTop==="1em")&&(document.getElementById("shield_button").style.marginLeft==="35em")){
 			document.getElementById("game_content_left").onmousemove= function(){
 				var x = event.clientX;
 				var y = event.clientY;
 
-				document.getElementById("shield_button").style.marginTop=(y-250)+"px";
-				document.getElementById("shield_button").style.marginLeft=(x-210)+"px";
+				document.getElementById("shield_button").style.marginTop=(y-15)+"em";
+				document.getElementById("shield_button").style.marginLeft=(x-13)+"em";
 			};
 		}
 		else {
@@ -177,8 +177,8 @@
 
 	function deactivate_shield(){
 		document.getElementById("game_content_left").onmousemove=null;
-		document.getElementById("shield_button").style.marginTop="10px";
-		document.getElementById("shield_button").style.marginLeft="560px";
+		document.getElementById("shield_button").style.marginTop="1em";
+		document.getElementById("shield_button").style.marginLeft="35em";
 	}
 
 	function message_output(){
@@ -216,18 +216,19 @@ function random_enemy(){
 }
 
 function spawn(){
-	var background_img_width = document.getElementById("background_picture_button").width;
-	var background_img_height = document.getElementById("background_picture_button").height;
-	var enemy_button_width = document.getElementById("enemy_button").width;
-	var enemy_button_height = document.getElementById("enemy_button").height;
-
+	var background_img_width = document.getElementById("background_picture_button").width/16;
+	var background_img_height = document.getElementById("background_picture_button").height/16;
+	var enemy_button_width = document.getElementById("enemy_button").width/16;
+	var enemy_button_height = document.getElementById("enemy_button").height/16;
+	//document.getElementById("timer").innerHTML = enemy_button_height;
 
 
 	enemy_down_or_up = (Math.random()*(background_img_height-enemy_button_height));
+
 	enemy_left_or_right = (Math.random()*(background_img_width-enemy_button_width));
 	//document.getElementById("timer").innerhtml = "hallo";
-	document.getElementById("enemy_button").style.marginLeft = enemy_left_or_right+"px";
-	document.getElementById("enemy_button").style.marginTop = enemy_down_or_up+"px";
+	document.getElementById("enemy_button").style.marginLeft = enemy_left_or_right+"em";
+	document.getElementById("enemy_button").style.marginTop = enemy_down_or_up+"em";
 
 }
 
@@ -254,6 +255,8 @@ function spawn(){
 				health_bar_player_inner_width=100;
 				document.getElementById("health_bar_player_inner").style.width=health_bar_player_inner_width+"%";
 				max_health_point = current_health_point;
+				document.getElementById("health_bar_enemy_inner").style.width = "100%";
+				health_bar_enemy_inner_width=health_bar_enemy;
 				document.getElementById("timer").innerHTML = " ";
 				random_enemy();
 				timer=30;
