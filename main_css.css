@@ -15,319 +15,318 @@
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
   body {
-    background-color: #B2D6FF; /* Blue */
+
+    *{
+    	margin:0;
+    	padding:0;
+    	color:white;
+      font-size: 1.01em;
+    }
+    span{
+    	--float:left;
+    	--border: 1px solid yellow;
+    	--margin-top:10px;
+    }
+
+    div{
+    	--border: 1px solid purple;
+    	--overflow:auto;
+    }
+    body{
+    	font-family:Arial;
+    	background-color: black;
+
+    }
+    h1{
+    	margin-top:10px;
+    	text-align:center;
+      font-size: 2em;
+    }
+    header{
+    	--border:2px solid #7f1dFF;
+
+    	margin: 0 auto;
+    	text-align: center;
+    	overflow: auto;
+    	width:50%;
+    	padding: 10px;
+    }
+
+    content{
+    	--border: 1px solid green;
+    	left:10%;
+    	top:12%;
+    	position:absolute;
+    	padding: 10px;
+    	width:80%;
+    	height:600px;
+    	margin:0 auto;
+    }
+
+    #info_content{
+    	--border:2px solid green;
+    	padding: 10px;
+    	--position:absolute;
+    	width:80%;
+    	height: 80px;
+    	margin: 0 auto;
+    }
+
+    #info_content_left{
+    	float: left;
+    	width:45%;
+    	height:80%;
+    	--border: 2px solid #7f1dFF;
+    	padding: 0.5em;
+    	padding-left:0;
+    }
+
+
+
+    #health_point_enemy{
+    	margin-left: 1em;
+
+    }
+
+    #health_point_player{
+    	margin-left: 1em;
+    }
+
+    #health_bar_enemy{
+    	float: left;
+    	--border: 2px solid #7f1d31;
+
+    	margin-left: 2em;
+    	width: 50%;
+    	height: 1.2em;
+    	background-color: orange;
+
+    }
+    #health_bar_enemy_inner{
+    	background-color: green;
+    	width:100%;
+    	height:100%;
+
+    }
+
+    #health_bar_player{
+    	float: left;
+    	--border: 2px solid #7f1d31;
+
+    	margin-left: 2em;
+    	width: 50%;
+    	height: 1.2em;
+    	background-color: orange;
+
+    }
+
+    #health_bar_player_inner{
+    	background-color: green;
+    	width:100%;
+    	height:100%;
+    }
+
+    #info_content_right{
+    	--border: 2px solid #7f1dFF;
+    	padding:1em;
+    	float:right;
+    	width:45%;
+    	height:80%;
+    }
+
+    #timer{
+    	float:left;
+    	margin-left:1em;
+    	margin-top:1%;
+    	--border: 1px solid red;
+    	height:3em;
+    	width:6em;
+    	font-weight:bold;
+    	--font-size:140%;
+    	text-align:center;
+    }
+
+    #little_boss{
+    	float:left;
+    	--border:1px solid green;
+    	text-align:center;
+    	margin-left:1em;
+    	margin-top:1%;
+    	font-weight:bold;
+    	height:3em;
+    	width:6em;
+    }
+
+    #big_boss{
+    	float:left;
+    	--border:1px solid blue;
+    	text-align:center;
+    	height:3em;
+    	width:6em;
+    	margin-left:1em;
+    	margin-top:1%;
+    	font-weight:bold;
+    }
+
+    #game_content{
+    	--border: 1px solid magenta;
+    	margin-top: 1%;
+    	margin-left:1em;
+    	padding: 1em;
+    	height: 80%;
+    	width: 90%;
+
+
+    }
+
+    #game_content_left{
+    	float:left;
+    	width:auto;
+    	height:100%;
+    	position:relative;
+    	--background-image:url("background_graphics/room_background.jpg");
+    	--background-image:linear-gradient(90);
+    	--background-size:cover;
+    	--background-repeat: no-repeat;
+    	--border-radius: 2%;
+    }
+
+    #background_picture_button{
+    	width:40em;
+    	height:25em;
+    	overflow:hidden;
+    	border-radius: 2%;
+    	z-index: 0;
+    	position: absolute;
+    }
+
+    #enemy_button{
+    	--border:1px solid green;
+    	width:7em;
+    	height:auto;
+    	--min-height:80px;
+    	margin-top:8em;
+    	margin-left:8em;
+    	z-index: 1;
+    	position: absolute;
+    }
+
+    #enemy_weapon_button{
+    	--border: 1px solid green;
+    	visibility:hidden;
+    	width:25em;
+    	height:auto;
+    	margin-top:6em;
+    	margin-left:6em;
+    	z-index: 2;
+    	position: absolute;
+    }
+
+    #shield_button{
+    	display:none;
+    	width:5em;
+    	height:auto;
+    	opacity:0.85;
+    	margin-top: 1em;
+    	margin-left:35em;
+    	z-index: 3;
+    	position: absolute;
+    }
+
+    #game_content_right{
+    	float:right;
+    	width:35%;
+    	height:80%;
+    	border-radius: 5%;
+    	--border: 1px solid red;
+    }
+
+    #info_buttons{
+    	margin:0;
+      padding: 0;
+    	border-radius: 8% 8% 0 0;
+    	height:5em;
+    	width:20.5em;
+    	--border: 5px solid green;
+    	overflow: hidden;
+    }
+
+    #click_info_button{
+    	width: 5em;
+    	height: 5em;
+    	background-color:#66cdaa;
+    }
+
+    #worker_info_button{
+    	width: 5em;
+    	height: 5em;
+    	background-color:#65A0BE;
+    }
+
+    #shop_info_button{
+    	width: 5em;
+    	height: 5em;
+    	background-color:#CD9363;
+    }
+
+    #setting_info_button{
+    	width: 5em;
+    	height: 5em;
+    	background-color:#C9605B;
+    }
+
+    #click_info_window{
+    	background-color:#66cdaa;
+    	width:20.4em;
+    	height:88%;
+    	border-radius: 0 0 3% 3%;
+    }
+
+    #skills{
+    	padding: 1em;
+      height:15em;
+    	margin-left: 1%;
+    	margin-right: 1%;
+    }
+    #increase_click_strength{
+    	width:auto;
+    	height:2em;
+    	margin:1%;
+    }
+
+
+    .tooltip {
+    	--position: absolute;
+    	display: none;
+    	--background-color: transparent;
+
+    }
+
+    #worker_info_window{
+    	background-color:#65A0BE;
+    	width:20.4em;
+    	height:88%;
+    	display:none;
+    	border-radius: 0 0 3% 3%;
+    }
+
+    #shop_info_window{
+    	background-color:#CD9363;
+    	width:20.4em;
+    	height:88%;
+    	display:none;
+    	border-radius: 0 0 3% 3%;
+    }
+
+    #setting_info_window{
+    	background-color:#C9605B;
+    	width:20.4em;
+    	height:88%;
+    	display:none;
+    	border-radius: 0 0 3% 3%;
+    }
+    footer{
+    	--border: 2px solid green;
+    }
   }
-}
-
-*{
-	margin:0;
-	padding:0;
-	color:white;
-  font-size: 1.01em;
-}
-span{
-	--float:left;
-	--border: 1px solid yellow;
-	--margin-top:10px;
-}
-
-div{
-	--border: 1px solid purple;
-	--overflow:auto;
-}
-body{
-	font-family:Arial;
-	--background-color: black;
-
-}
-h1{
-	margin-top:10px;
-	text-align:center;
-  font-size: 2em;
-}
-header{
-	--border:2px solid #7f1dFF;
-
-	margin: 0 auto;
-	text-align: center;
-	overflow: auto;
-	width:50%;
-	padding: 10px;
-}
-
-content{
-	--border: 1px solid green;
-	left:10%;
-	top:12%;
-	position:absolute;
-	padding: 10px;
-	width:80%;
-	height:600px;
-	margin:0 auto;
-}
-
-#info_content{
-	--border:2px solid green;
-	padding: 10px;
-	--position:absolute;
-	width:80%;
-	height: 80px;
-	margin: 0 auto;
-}
-
-#info_content_left{
-	float: left;
-	width:45%;
-	height:80%;
-	--border: 2px solid #7f1dFF;
-	padding: 0.5em;
-	padding-left:0;
-}
-
-
-
-#health_point_enemy{
-	margin-left: 1em;
-
-}
-
-#health_point_player{
-	margin-left: 1em;
-}
-
-#health_bar_enemy{
-	float: left;
-	--border: 2px solid #7f1d31;
-
-	margin-left: 2em;
-	width: 50%;
-	height: 1.2em;
-	background-color: orange;
-
-}
-#health_bar_enemy_inner{
-	background-color: green;
-	width:100%;
-	height:100%;
-
-}
-
-#health_bar_player{
-	float: left;
-	--border: 2px solid #7f1d31;
-
-	margin-left: 2em;
-	width: 50%;
-	height: 1.2em;
-	background-color: orange;
-
-}
-
-#health_bar_player_inner{
-	background-color: green;
-	width:100%;
-	height:100%;
-}
-
-#info_content_right{
-	--border: 2px solid #7f1dFF;
-	padding:1em;
-	float:right;
-	width:45%;
-	height:80%;
-}
-
-#timer{
-	float:left;
-	margin-left:1em;
-	margin-top:1%;
-	--border: 1px solid red;
-	height:3em;
-	width:6em;
-	font-weight:bold;
-	--font-size:140%;
-	text-align:center;
-}
-
-#little_boss{
-	float:left;
-	--border:1px solid green;
-	text-align:center;
-	margin-left:1em;
-	margin-top:1%;
-	font-weight:bold;
-	height:3em;
-	width:6em;
-}
-
-#big_boss{
-	float:left;
-	--border:1px solid blue;
-	text-align:center;
-	height:3em;
-	width:6em;
-	margin-left:1em;
-	margin-top:1%;
-	font-weight:bold;
-}
-
-#game_content{
-	--border: 1px solid magenta;
-	margin-top: 1%;
-	margin-left:1em;
-	padding: 1em;
-	height: 80%;
-	width: 90%;
-
-
-}
-
-#game_content_left{
-	float:left;
-	width:auto;
-	height:100%;
-	position:relative;
-	--background-image:url("background_graphics/room_background.jpg");
-	--background-image:linear-gradient(90);
-	--background-size:cover;
-	--background-repeat: no-repeat;
-	--border-radius: 2%;
-}
-
-#background_picture_button{
-	width:40em;
-	height:25em;
-	overflow:hidden;
-	border-radius: 2%;
-	z-index: 0;
-	position: absolute;
-}
-
-#enemy_button{
-	--border:1px solid green;
-	width:7em;
-	height:auto;
-	--min-height:80px;
-	margin-top:8em;
-	margin-left:8em;
-	z-index: 1;
-	position: absolute;
-}
-
-#enemy_weapon_button{
-	--border: 1px solid green;
-	visibility:hidden;
-	width:25em;
-	height:auto;
-	margin-top:6em;
-	margin-left:6em;
-	z-index: 2;
-	position: absolute;
-}
-
-#shield_button{
-	display:none;
-	width:5em;
-	height:auto;
-	opacity:0.85;
-	margin-top: 1em;
-	margin-left:35em;
-	z-index: 3;
-	position: absolute;
-}
-
-#game_content_right{
-	float:right;
-	width:35%;
-	height:80%;
-	border-radius: 5%;
-	--border: 1px solid red;
-}
-
-#info_buttons{
-	margin:0;
-  padding: 0;
-	border-radius: 8% 8% 0 0;
-	height:5em;
-	width:20.5em;
-	--border: 5px solid green;
-	overflow: hidden;
-}
-
-#click_info_button{
-	width: 5em;
-	height: 5em;
-	background-color:#66cdaa;
-}
-
-#worker_info_button{
-	width: 5em;
-	height: 5em;
-	background-color:#65A0BE;
-}
-
-#shop_info_button{
-	width: 5em;
-	height: 5em;
-	background-color:#CD9363;
-}
-
-#setting_info_button{
-	width: 5em;
-	height: 5em;
-	background-color:#C9605B;
-}
-
-#click_info_window{
-	background-color:#66cdaa;
-	width:20.4em;
-	height:88%;
-	border-radius: 0 0 3% 3%;
-}
-
-#skills{
-	padding: 1em;
-  height:15em;
-	margin-left: 1%;
-	margin-right: 1%;
-}
-#increase_click_strength{
-	width:auto;
-	height:2em;
-	margin:1%;
-}
-
-
-.tooltip {
-	--position: absolute;
-	display: none;
-	--background-color: transparent;
-
-}
-
-#worker_info_window{
-	background-color:#65A0BE;
-	width:20.4em;
-	height:88%;
-	display:none;
-	border-radius: 0 0 3% 3%;
-}
-
-#shop_info_window{
-	background-color:#CD9363;
-	width:20.4em;
-	height:88%;
-	display:none;
-	border-radius: 0 0 3% 3%;
-}
-
-#setting_info_window{
-	background-color:#C9605B;
-	width:20.4em;
-	height:88%;
-	display:none;
-	border-radius: 0 0 3% 3%;
-}
-footer{
-	--border: 2px solid green;
 }
