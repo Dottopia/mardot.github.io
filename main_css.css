@@ -348,6 +348,7 @@ header{
   height:88%;
   display:none;
   border-radius: 0 0 3% 3%;
+  font-style:italic;
 }
 footer{
   --border: 2px solid green;
