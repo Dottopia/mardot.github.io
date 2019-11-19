@@ -14,7 +14,7 @@
 
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
-  body {
+
 
     *{
     	margin:0;
@@ -328,5 +328,4 @@
     footer{
     	--border: 2px solid green;
     }
-  }
 }
