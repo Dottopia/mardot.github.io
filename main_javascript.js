@@ -14,7 +14,7 @@
 	var current_health_point_player = max_health_point_player;
 	var enemy_left_or_right;
 	var enemy_down_or_up;
-	var timer = 15;
+	var timer = 30;
 	var next_level_is_no_boss_level;
 	var next_level_is_big_boss_level;
 	var next_level_is_little_boss_level;
@@ -207,7 +207,7 @@
 	}
 
 function random_enemy(){
-	
+
 		//document.getElementById("enemy_button").src = "enemy_graphics/pikachu.png";
 
 	var rand_pic = enemy_graphics_array[Math.floor(Math.random()*enemy_graphics_array.length)];
