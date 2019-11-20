@@ -25,14 +25,18 @@ body{
 }
 h1{
   margin-top:0.5em;
-  --text-align:center;
+  margin-bottom:0.2em;
   font-size: 2em;
 }
 header{
   --border:2px solid #7f1dFF;
   overflow: auto;
-  padding-left: 3em;
-  font-size: 1.2em;
+  padding-left: 5em;
+}
+
+#level{
+  padding-left: 4em;
+  font-size: 1.5em;
 }
 
   #info_content{
@@ -46,7 +50,7 @@ header{
 
   #info_content_left{
   	float: left;
-  	width:20em;
+  	width:22em;
   	height:4em;
   	--border: 2px solid #7f1dFF;
   	padding: 0.5em;
@@ -97,8 +101,8 @@ header{
   #info_content_right{
   	--border: 2px solid #7f1dFF;
     padding-top:1em;
-  	width:16em;
-  	height:3em;
+  	width:20em;
+  	height:2em;
   }
 
   #timer{
@@ -213,7 +217,7 @@ header{
 
   #game_content_right{
     display:block;
-    padding-top: 26em;
+    padding-top: 28em;
     width:10em;
     height:25em;
     border-radius: 5%;
@@ -229,7 +233,7 @@ header{
 
   #game_content_right{
     display:block;
-    padding-top: 26em;
+    padding-top: 28em;
     width:10em;
     height:25em;
     border-radius: 5%;

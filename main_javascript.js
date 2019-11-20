@@ -21,6 +21,12 @@
 	var this_level_is_no_boss_level;
 	var enemy_graphics_array = ["enemy_graphics/mouse3.png", "enemy_graphics/bee.png","enemy_graphics/ant.png",
 	"enemy_graphics/spider.png","enemy_graphics/fly.png","enemy_graphics/butterfly.png", "enemy_graphics/bird.png", "enemy_graphics/dog.png"];
+	var little_bosses_graphics = ["enemy_graphics/small_boss_wasp.png", "enemy_graphics/ananas.png",
+	"enemy_graphics/ananas.png","enemy_graphics/grumpy_ananas.png"];
+	var little_boss_counter =0;
+	var big_bosses_graphics = ["enemy_graphics/big_boss_cat.png","enemy_graphics/big_boss_cat_evil.png","enemy_graphics/chain_saw_cat.png",
+	"enemy_graphics/pikachu.png"];
+	var big_boss_counter =0;
 	var health_bar_enemy_inner_width = 100;
 	var health_bar_player_inner_width = 100;
 	var game_content_left_width = 40;
@@ -85,7 +91,10 @@
 
 					max_health_point = 10 * next_lvl;
 
-					document.getElementById("enemy_button").src = "enemy_graphics/small_boss_wasp.png";
+					document.getElementById("enemy_button").src = little_bosses_graphics[little_boss_counter];
+					if (little_boss_counter<3){
+						little_boss_counter++;
+					}
 					document.getElementById("enemy_button").style.width="8em";
 					document.getElementById("little_boss").innerHTML = "Little Boss";
 					document.getElementById("big_boss").innerHTML = " ";
@@ -96,7 +105,10 @@
 			if (next_level_is_big_boss_level){
 					max_health_point = 10 * next_lvl;
 
-					document.getElementById("enemy_button").src = "enemy_graphics/big_boss_cat.png";
+					document.getElementById("enemy_button").src = big_bosses_graphics[big_boss_counter];
+					if (big_boss_counter<3){
+						big_boss_counter++;
+					}
 					document.getElementById("little_boss").innerHTML = " ";
 					document.getElementById("big_boss").innerHTML = "Big Boss";
 					all_boss_timer_interval = setInterval(all_boss_timer,1000);
@@ -145,15 +157,15 @@
 				}
 			}
 
-			if (((lvl/little_boss_lvl)===1)&&((health_point_enemy/max_health_point)<0.5)){
-				document.getElementById("enemy_weapon_button").src="enemy_graphics/small_boss_wasp_stinger.png";
-				document.getElementById("enemy_weapon_button").style.visibility="visible";
-				setInterval(function(){
-					document.getElementById("enemy_weapon_button").style.marginLeft=(Math.random()*game_content_left_width)+"em";
-					document.getElementById("enemy_weapon_button").style.marginTop=(Math.random()*game_content_left_height)+"em";
-					//document.getElementById("timer").innerHTML = document.getElementById("enemy_weapon_button").style.marginLeft;
-				},1000);
-			}
+			// if (((lvl/little_boss_lvl)===1)&&((health_point_enemy/max_health_point)<0.5)){
+			// 	document.getElementById("enemy_weapon_button").src="enemy_graphics/small_boss_wasp_stinger.png";
+			// 	document.getElementById("enemy_weapon_button").style.visibility="visible";
+			// 	setInterval(function(){
+			// 		document.getElementById("enemy_weapon_button").style.marginLeft=(Math.random()*game_content_left_width)+"em";
+			// 		document.getElementById("enemy_weapon_button").style.marginTop=(Math.random()*game_content_left_height)+"em";
+			// 		//document.getElementById("timer").innerHTML = document.getElementById("enemy_weapon_button").style.marginLeft;
+			// 	},1000);
+			// }
 	}
 
 	function activate_shield(){
