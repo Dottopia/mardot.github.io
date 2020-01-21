@@ -1,5 +1,5 @@
 	var click = 0;
-	var click_attack = 10;
+	var click_attack = 1;
 	var lvl = 1;
 	var next_lvl;
 	var experience = 0;
